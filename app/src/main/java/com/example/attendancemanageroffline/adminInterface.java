@@ -188,7 +188,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                     }
                 }
             }
-            showMessage("SUCCES", "ATTENDANCE UPDATED");
+            showMessage("SUCCESS", "ATTENDANCE UPDATED");
         }
         else if(v==save)
         {
