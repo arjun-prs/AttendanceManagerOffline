@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
@@ -31,7 +32,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
     String roll_no_string = new String();
     String course_String[]={"NETWORKS", "SOFTWARE", "COMPILER"};
     String section_String[]={"CSE-A", "CSE-B", "CSE-C"};
-    String course_selected=new String();
+    String course_selected=new String(), no=new String(), msg=new String();
     int i=0;
     int temp_int=0;
     String roll_no_list[]=new String[1008];
@@ -106,10 +107,54 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         if(v==submit)
         {
+            for(i=0;i<70;i++)
+                present_list[i]=false;
+            if(check1.isChecked())
+            {
+                present_list[0]=true;
+            }
+            if(check2.isChecked())
+            {
+                present_list[1]=true;
+            }
+            if(check3.isChecked())
+            {
+                present_list[2]=true;
+            }
+            if(check4.isChecked())
+            {
+                present_list[3]=true;
+            }
+            if(check5.isChecked())
+            {
+                present_list[4]=true;
+            }
+            if(check6.isChecked())
+            {
+                present_list[5]=true;
+            }
+            if(check7.isChecked())
+            {
+                present_list[6]=true;
+            }
+            if(check8.isChecked())
+            {
+                present_list[7]=true;
+            }
+            if(check9.isChecked())
+            {
+                present_list[8]=true;
+            }
+            if(check10.isChecked())
+            {
+                present_list[9]=true;
+            }
             if(section_selected.equals("CSE-A"))
             {
-                for(i=0;i<70;i++)
+                Cursor c1 = db.rawQuery("SELECT * FROM cseA", null);
+                for(i=0;i<10;i++)
                 {
+                    c1.moveToNext();
                     if(present_list[i]==true&&course_selected.equals("NETWORKS"))
                     {
                         temp_int=Integer.valueOf(att[i]);
@@ -118,12 +163,26 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         db.execSQL("UPDATE cseA SET networks = '"+temp+"'");
                         //showMessage("SUCCESS", temp);
                     }
+                    else if(course_selected.equals("NETWORKS")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
+                    }
                     if(present_list[i]==true&&course_selected.equals("SOFTWARE"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
                         db.execSQL("UPDATE cseA SET software = '"+temp+"'");
+                    }
+                    else if(course_selected.equals("SOFTWARE")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
                     }
                     if(present_list[i]==true&&course_selected.equals("COMPILER"))
                     {
@@ -133,18 +192,34 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         db.execSQL("UPDATE cseA SET compiler = '"+temp+"'");
                         //showMessage("SUCCESS", temp);
                     }
+                    else if(course_selected.equals("COMPILER")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
+                    }
                 }
             }
             if(section_selected.equals("CSE-B"))
             {
-                for(i=0;i<70;i++)
+                Cursor c1 = db.rawQuery("SELECT * FROM cseB", null);
+                for(i=0;i<10;i++)
                 {
+                    c1.moveToNext();
                     if(present_list[i]==true&&course_selected.equals("NETWORKS"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
                         db.execSQL("UPDATE cseB SET networks = '"+temp+"'");
+                    }
+                    else if(course_selected.equals("NETWORKS")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
                     }
                     if(present_list[i]==true&&course_selected.equals("SOFTWARE"))
                     {
@@ -153,6 +228,13 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp=String.valueOf(temp_int);
                         db.execSQL("UPDATE cseB SET software = '"+temp+"'");
                     }
+                    else if(course_selected.equals("SOFTWARE")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
+                    }
                     if(present_list[i]==true&&course_selected.equals("COMPILER"))
                     {
                         temp_int=Integer.valueOf(att[i]);
@@ -160,18 +242,34 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp=String.valueOf(temp_int);
                         db.execSQL("UPDATE cseB SET compiler = '"+temp+"'");
                     }
+                    else if(course_selected.equals("COMPILER")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
+                    }
                 }
             }
             if(section_selected.equals("CSE-C"))
             {
-                for(i=0;i<70;i++)
+                Cursor c1 = db.rawQuery("SELECT * FROM cseC", null);
+                for(i=0;i<10;i++)
                 {
+                    c1.moveToNext();
                     if(present_list[i]==true&&course_selected.equals("NETWORKS"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
                         db.execSQL("UPDATE cseC SET networks = '"+temp+"'");
+                    }
+                    else if(course_selected.equals("NETWORKS")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
                     }
                     if(present_list[i]==true&&course_selected.equals("SOFTWARE"))
                     {
@@ -180,12 +278,26 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp=String.valueOf(temp_int);
                         db.execSQL("UPDATE cseC SET software = '"+temp+"'");
                     }
+                    else if(course_selected.equals("SOFTWARE")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
+                    }
                     if(present_list[i]==true&&course_selected.equals("COMPILER"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
                         db.execSQL("UPDATE cseC SET compiler = '"+temp+"'");
+                    }
+                    else if(course_selected.equals("COMPILER")&&present_list[i]==false)
+                    {
+                        SmsManager sms = SmsManager.getDefault();
+                        no=c1.getString(4);
+                        msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
+                        sms.sendTextMessage(no, null, msg, null, null);
                     }
                 }
             }
@@ -253,47 +365,6 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        for(i=0;i<70;i++)
-            present_list[i]=false;
-        if(buttonView == check1)
-        {
-            present_list[0]=true;
-        }
-        if(buttonView == check2)
-        {
-            present_list[1]=true;
-        }
-        if(buttonView == check3)
-        {
-            present_list[2]=true;
-        }
-        if(buttonView == check4)
-        {
-            present_list[3]=true;
-        }
-        if(buttonView == check5)
-        {
-            present_list[4]=true;
-        }
-        if(buttonView == check6)
-        {
-            present_list[5]=true;
-        }
-        if(buttonView == check7)
-        {
-            present_list[6]=true;
-        }
-        if(buttonView == check8)
-        {
-            present_list[7]=true;
-        }
-        if(buttonView == check9)
-        {
-            present_list[8]=true;
-        }
-        if(buttonView == check10)
-        {
-            present_list[9]=true;
-        }
+
     }
 }
