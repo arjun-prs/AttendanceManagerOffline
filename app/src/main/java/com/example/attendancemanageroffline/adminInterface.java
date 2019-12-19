@@ -131,6 +131,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp_int++;
                         temp=String.valueOf(temp_int);
                         db.execSQL("UPDATE cseA SET compiler = '"+temp+"'");
+                        //showMessage("SUCCESS", temp);
                     }
                 }
             }
@@ -208,7 +209,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                 }
                 else if(course_selected.equals("COMPILER"))
                 {
-                    att[i]=c3.getString(3);
+                    att[i++]=c3.getString(3);
                 }
             }
             Cursor c2 = db.rawQuery("SELECT * FROM students", null);

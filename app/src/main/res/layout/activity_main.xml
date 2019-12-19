@@ -39,5 +39,11 @@
         android:layout_height="wrap_content"
         android:text="LOGIN"
         android:id="@+id/edButLogin"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:id="@+id/edButClear"
+        android:text="CLEAR DATABASES"/>
 
 </LinearLayout>
