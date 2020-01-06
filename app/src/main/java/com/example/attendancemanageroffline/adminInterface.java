@@ -155,12 +155,13 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                 for(i=0;i<10;i++)
                 {
                     c1.moveToNext();
+                    String roll = c1.getString(0);
                     if(present_list[i]==true&&course_selected.equals("NETWORKS"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseA SET networks = '"+temp+"'");
+                        db.execSQL("UPDATE cseA SET networks = '"+temp+"' where roll_no= '"+ roll +"'");
                         //showMessage("SUCCESS", temp);
                     }
                     else if(course_selected.equals("NETWORKS")&&present_list[i]==false)
@@ -175,7 +176,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseA SET software = '"+temp+"'");
+                        db.execSQL("UPDATE cseA SET software = '"+temp+"' where roll_no= '"+ roll +"'");
                     }
                     else if(course_selected.equals("SOFTWARE")&&present_list[i]==false)
                     {
@@ -189,7 +190,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseA SET compiler = '"+temp+"'");
+                        db.execSQL("UPDATE cseA SET compiler = '"+temp+"' where roll_no= '"+ roll +"'");
                         //showMessage("SUCCESS", temp);
                     }
                     else if(course_selected.equals("COMPILER")&&present_list[i]==false)
@@ -207,12 +208,13 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                 for(i=0;i<10;i++)
                 {
                     c1.moveToNext();
+                    String roll = c1.getString(0);
                     if(present_list[i]==true&&course_selected.equals("NETWORKS"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseB SET networks = '"+temp+"'");
+                        db.execSQL("UPDATE cseB SET networks = '"+temp+"' where roll_no= '"+ roll +"'");
                     }
                     else if(course_selected.equals("NETWORKS")&&present_list[i]==false)
                     {
@@ -226,7 +228,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseB SET software = '"+temp+"'");
+                        db.execSQL("UPDATE cseB SET software = '"+temp+"' where roll_no= '"+ roll +"'");
                     }
                     else if(course_selected.equals("SOFTWARE")&&present_list[i]==false)
                     {
@@ -240,7 +242,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseB SET compiler = '"+temp+"'");
+                        db.execSQL("UPDATE cseB SET compiler = '"+temp+"' where roll_no= '"+ roll +"'");
                     }
                     else if(course_selected.equals("COMPILER")&&present_list[i]==false)
                     {
@@ -257,12 +259,13 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                 for(i=0;i<10;i++)
                 {
                     c1.moveToNext();
+                    String roll = c1.getString(0);
                     if(present_list[i]==true&&course_selected.equals("NETWORKS"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseC SET networks = '"+temp+"'");
+                        db.execSQL("UPDATE cseC SET networks = '"+temp+"' where roll_no= '"+ roll +"'");
                     }
                     else if(course_selected.equals("NETWORKS")&&present_list[i]==false)
                     {
@@ -276,7 +279,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseC SET software = '"+temp+"'");
+                        db.execSQL("UPDATE cseC SET software = '"+temp+"' where roll_no= '"+ roll +"'");
                     }
                     else if(course_selected.equals("SOFTWARE")&&present_list[i]==false)
                     {
@@ -290,7 +293,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
                         temp=String.valueOf(temp_int);
-                        db.execSQL("UPDATE cseC SET compiler = '"+temp+"'");
+                        db.execSQL("UPDATE cseC SET compiler = '"+temp+"' where roll_no= '"+ roll +"'");
                     }
                     else if(course_selected.equals("COMPILER")&&present_list[i]==false)
                     {

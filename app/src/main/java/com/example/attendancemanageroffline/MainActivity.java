@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE170"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '7780519914')");
-                db.execSQL("INSERT INTO cseA values ('"+ temp+ "', '0', '0', '0', '7780519914')");
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '0000000000')");//7780519914
+                db.execSQL("INSERT INTO cseA values ('"+ temp+ "', '0', '0', '0', '0000000000')");
             }
             for(i=0;i<70;i++)
             {
@@ -110,8 +110,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE171"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '7540086973')");
-                db.execSQL("INSERT INTO cseB values ('"+ temp+ "', '0', '0', '0', '7540086973')");
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '1111111111')");//7540086973
+                db.execSQL("INSERT INTO cseB values ('"+ temp+ "', '0', '0', '0', '1111111111')");
             }
             for(i=0;i<70;i++)
             {
@@ -124,8 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE172"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");
-                db.execSQL("INSERT INTO cseC values ('"+ temp+ "', '0', '0', '0', '9550643340')");
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '2222222222')");
+                db.execSQL("INSERT INTO cseC values ('"+ temp+ "', '0', '0', '0', '2222222222')");//9550643340
             }
         }
     }
