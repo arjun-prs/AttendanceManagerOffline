@@ -29,7 +29,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clear=findViewById(R.id.edButClear);
         clear.setOnClickListener(this);
         login.setOnClickListener(this);
+        roll_no.setText("ADMIN001");
+        password.setText("DEFAULT");
         db=openOrCreateDatabase("studentDB2", Context.MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS admins (roll_no varchar(18), name varchar(18), password varchar(18), phone varchar(18))");
+        db.execSQL("CREATE TABLE IF NOT EXISTS students (roll_no varchar(18), password varchar(18), phone varchar(18))");
+        db.execSQL("CREATE TABLE IF NOT EXISTS cseA (roll_no varchar(18), networks varchar(8), software varchar(8), compiler varchar(8), phone varchar(18))");
+        db.execSQL("CREATE TABLE IF NOT EXISTS cseB (roll_no varchar(18), networks varchar(8), software varchar(8), compiler varchar(8), phone varchar(18))");
+        db.execSQL("CREATE TABLE IF NOT EXISTS cseC (roll_no varchar(18), networks varchar(8), software varchar(8), compiler varchar(8), phone varchar(18))");
+        db.execSQL("INSERT INTO admins values('ADMIN001', 'SENTHIL KUMAR', 'DEFAULT', '9445147911')");
+        db.execSQL("INSERT INTO admins values('ADMIN002', 'PRIYANKA KUMAR', 'DEFAULT', '9445147911')");
+        db.execSQL("INSERT INTO admins values('ADMIN003', 'PRAKASH', 'DEFAULT', '9445147911')");
+        for(i=0;i<70;i++)
+        {
+            if(i<9)
+            {
+                temp="CB.EN.U4CSE1700"+(Integer.toString(i+1));
+            }
+            else
+            {
+                temp="CB.EN.U4CSE170"+(Integer.toString(i+1));
+            }
+            //temp.concat(Integer.toString(i));
+            db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '0000000000')");//7780519914
+            db.execSQL("INSERT INTO cseA values ('"+ temp+ "', '0', '0', '0', '0000000000')");
+        }
+        for(i=0;i<70;i++)
+        {
+            if(i<9)
+            {
+                temp="CB.EN.U4CSE1710"+(Integer.toString(i+1));
+            }
+            else
+            {
+                temp="CB.EN.U4CSE171"+(Integer.toString(i+1));
+            }
+            //temp.concat(Integer.toString(i));
+            db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '1111111111')");//7540086973
+            db.execSQL("INSERT INTO cseB values ('"+ temp+ "', '0', '0', '0', '1111111111')");
+        }
+        for(i=0;i<70;i++)
+        {
+            if(i<9)
+            {
+                temp="CB.EN.U4CSE1720"+(Integer.toString(i+1));
+            }
+            else
+            {
+                temp="CB.EN.U4CSE172"+(Integer.toString(i+1));
+            }
+            //temp.concat(Integer.toString(i));
+            db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '2222222222')");
+            db.execSQL("INSERT INTO cseC values ('"+ temp+ "', '0', '0', '0', '2222222222')");//9550643340
+        }
     }
 
     @Override

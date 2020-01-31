@@ -91,6 +91,8 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
         ArrayAdapter<String> ad1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, course_String);
         course.setAdapter(ad1);
         section.setAdapter(ad2);
+        course.setText("NETWORKS");
+        section.setText("CSE-A");
         db=openOrCreateDatabase("studentDB2",Context.MODE_PRIVATE, null);
         Cursor c1 = db.rawQuery("SELECT * FROM admins", null);
         while(c1.moveToNext())

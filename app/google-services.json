@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "224978455940",
+    "firebase_url": "https://attendancemanageroffline.firebaseio.com",
+    "project_id": "attendancemanageroffline",
+    "storage_bucket": "attendancemanageroffline.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224978455940:android:698e98c2fba7e4ed3021d1",
+        "android_client_info": {
+          "package_name": "com.example.attendancemanageroffline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224978455940-eakfmlbqtgag7aqjru9bd0ukrb95fbfj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.attendancemanageroffline",
+            "certificate_hash": "af8e01147e64777096fac05f74243b870c5d6bdf"
+          }
+        },
+        {
+          "client_id": "224978455940-6nc0lj8e0a9g4koki85fgip84thtg5m6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASw3aj7SUEt47PyEAjc3UbwtW2TxybzDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224978455940-6nc0lj8e0a9g4koki85fgip84thtg5m6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
