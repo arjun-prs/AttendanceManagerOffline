@@ -1,0 +1,11 @@
+apply plugin: 'checkstyle'
+task checkstyle(type: Checkstyle) {
+    description 'Check code standard'
+    group 'verification'
+    configFile file('./code_quality/checkstyle.xml')
+    source 'src'
+    include '**/*.java'
+exclude '**/gen/**'
+ classpath = files()
+ ignoreFailures = false
+ }

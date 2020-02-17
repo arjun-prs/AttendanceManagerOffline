@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<module name="Checker">
+
+<module name="MethodName"/>
+<module name="ConstantName"/>
+
+<module name="AvoidStarImport"/>
+<module name="UnusedImports"/>
+
+<module name="ParameterNumber">
+<property name="max" value="6"/>
+    </module>
+</module>
