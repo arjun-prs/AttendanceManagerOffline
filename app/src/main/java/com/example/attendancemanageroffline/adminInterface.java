@@ -7,37 +7,59 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CheckedTextView;
 import android.widget.CompoundButton;
-import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 public class adminInterface extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     SQLiteDatabase db;
-    Button submit, save;
-    TextView admin, date, time, roll1, roll2, roll3, roll4, roll5, roll6, roll7, roll8, roll9, roll10;
-    CheckBox check1, check2, check3, check4, check5, check6, check7, check8, check9, check10;
-    AutoCompleteTextView course, section;
+    Button submit;
+    Button save;
+    TextView admin;
+    TextView date;
+    TextView time;
+    TextView roll1;
+    TextView roll2;
+    TextView roll3;
+    TextView roll4;
+    TextView roll5;
+    TextView roll6;
+    TextView roll7;
+    TextView roll8;
+    TextView roll9;
+    TextView roll10;
+
+
+    CheckBox check1;
+    CheckBox check2;
+    CheckBox check3;
+    CheckBox check4;
+    CheckBox check5;
+    CheckBox check6;
+    CheckBox check7;
+    CheckBox check8;
+    CheckBox check9;
+    CheckBox check10;
+
+    AutoCompleteTextView course;
+    AutoCompleteTextView section;
     String admin_name = new String();
     String roll_no_string = new String();
     String course_String[]={"NETWORKS", "SOFTWARE", "COMPILER"};
     String section_String[]={"CSE-A", "CSE-B", "CSE-C"};
-    String course_selected=new String(), no=new String(), msg=new String();
+    String course_selected=new String();
+    String no=new String();
+    String msg=new String();
+
     int i=0;
     int temp_int=0;
     String roll_no_list[]=new String[1008];
@@ -196,7 +218,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
                         sms.sendTextMessage(no, null, msg, null, null);
                     }
-                    if(present_list[i]==true&&course_selected.equals("COMPILER"))
+                    if(present_list[i]== true&&course_selected.equals("COMPILER"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;

@@ -13,8 +13,10 @@ import android.widget.EditText;
 import static android.content.Context.MODE_PRIVATE;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    EditText roll_no, password;
-    Button login, clear;
+    EditText roll_no;
+    EditText password;
+    Button login;
+    Button clear;
     SQLiteDatabase db;
     int i;
     String temp=new String();
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         roll_no.setText("ADMIN001");
         password.setText("DEFAULT");
         db=openOrCreateDatabase("studentDB2", Context.MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS admins (roll_no varchar(18), name varchar(18), password varchar(18), phone varchar(18))");
+        /*db.execSQL("CREATE TABLE IF NOT EXISTS admins (roll_no varchar(18), name varchar(18), password varchar(18), phone varchar(18))");
         db.execSQL("CREATE TABLE IF NOT EXISTS students (roll_no varchar(18), password varchar(18), phone varchar(18))");
         db.execSQL("CREATE TABLE IF NOT EXISTS cseA (roll_no varchar(18), networks varchar(8), software varchar(8), compiler varchar(8), phone varchar(18))");
         db.execSQL("CREATE TABLE IF NOT EXISTS cseB (roll_no varchar(18), networks varchar(8), software varchar(8), compiler varchar(8), phone varchar(18))");
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //temp.concat(Integer.toString(i));
             db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9490249442')");
             db.execSQL("INSERT INTO cseC values ('"+ temp+ "', '0', '0', '0', '9490249442')");//9550643340
-        }
+        }*/
     }
 
     @Override
@@ -148,8 +150,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE170"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '6281424057')");//7780519914
-                db.execSQL("INSERT INTO cseA values ('"+ temp+ "', '0', '0', '0', '6281424057')");
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");//7780519914
+                db.execSQL("INSERT INTO cseA values ('"+ temp+ "', '0', '0', '0', '955064330')");
             }
             for(i=0;i<70;i++)
             {
@@ -162,8 +164,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE171"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '6281424057')");//7540086973
-                db.execSQL("INSERT INTO cseB values ('"+ temp+ "', '0', '0', '0', '6281424057')");
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");//7540086973
+                db.execSQL("INSERT INTO cseB values ('"+ temp+ "', '0', '0', '0', '9550643340')");
             }
             for(i=0;i<70;i++)
             {
@@ -176,11 +178,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE172"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9490249442')");
-                db.execSQL("INSERT INTO cseC values ('"+ temp+ "', '0', '0', '0', '9490249442')");//9550643340
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");
+                db.execSQL("INSERT INTO cseC values ('"+ temp+ "', '0', '0', '0', '9550643340')");//9550643340
             }
         }
     }
+
     public void showMessage(String title, String message)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
