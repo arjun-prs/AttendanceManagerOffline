@@ -1,5 +1,5 @@
 package com.example.attendancemanageroffline;
-//hello
+
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.widget.EditText;
