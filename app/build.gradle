@@ -5,18 +5,6 @@ apply plugin: 'org.sonarqube' // added for sonar qube
 apply plugin: 'com.google.firebase.firebase-perf'
 apply plugin: "org.sonarqube"
 
-sonarqube {
-    properties {
-        property "sonar.projectName", "attendancemanageroffline"
-        property "sonar.projectKey", "com.example.attendancemanageroffline"
-        property "sonar.host.url", "http://127.0.0.1:8000"
-        property "sonar.language", "java"
-        property "sonar.sources", "src/main/"
-        property "sonar.login", "ADMIN"
-        property "sonar.password", "DEFAULT"
-    }
-}
-
 
 android {
     compileSdkVersion 29
