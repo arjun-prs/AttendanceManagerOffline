@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-
+//check for statci code analysis
 public class adminInterface extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     SQLiteDatabase db;
     Button submit;
