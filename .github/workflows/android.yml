@@ -28,7 +28,7 @@ jobs:
         java-version: '9.0.4' 
         java-package: jdk 
         architecture: x64 
-    - run: ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000/
+    - run: ./gradlew sonarqube
     
     
 #   sonarQubeTrigger:
