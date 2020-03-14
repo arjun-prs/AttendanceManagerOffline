@@ -17,18 +17,18 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run: ./gradlew test
+      run: ./gradlew androidTest
       
-  UI-test:
-    runs-on: ubuntu-latest
-    steps:
+#   UI-test:
+#     runs-on: ubuntu-latest
+#     steps:
     
-    - uses: actions/setup-java@v1
-      with:
-        java-version: '9.0.4' 
-        java-package: jdk 
-        architecture: x64 
-    - run: ./gradlew sonarqube
+#     - uses: actions/setup-java@v1
+#       with:
+#         java-version: '9.0.4' 
+#         java-package: jdk 
+#         architecture: x64 
+#     - run: ./gradlew sonarqube
     
     
 #   sonarQubeTrigger:
