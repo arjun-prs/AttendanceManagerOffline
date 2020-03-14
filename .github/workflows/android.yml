@@ -19,14 +19,28 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew test
       
-  sonarQubeTrigger:
-       name: SonarQube Trigger
-       runs-on: ubuntu-latest
-       steps:
-        - uses: actions/checkout@master
-        - name: SonarQube Scan
-          uses: kitabisa/sonarqube-action@v0.0.1
-          with:
-            host: ${{ secrets.SONARQUBE_HOST }}
-            login: ${{ secrets.SONARQUBE_TOKEN }}
+  UI-test:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '9.0.4' 
+        java-package: jdk 
+        architecture: x64 
+    - run: |
+            cd /app/src/androidTest/
+            java MainActivityTest5
+    
+    
+#   sonarQubeTrigger:
+#        name: SonarQube Trigger
+#        runs-on: ubuntu-latest
+#        steps:
+#         - uses: actions/checkout@master
+#         - name: SonarQube Scan
+#           uses: kitabisa/sonarqube-action@v0.0.1
+#           with:
+#             host: ${{ secrets.SONARQUBE_HOST }}
+#             login: ${{ secrets.SONARQUBE_TOKEN }}
 
