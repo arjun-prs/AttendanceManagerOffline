@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-// the change
+
 import static android.content.Context.MODE_PRIVATE;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
