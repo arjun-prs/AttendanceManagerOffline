@@ -10,7 +10,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-//updated
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -19,7 +18,6 @@ import static org.junit.Assert.*;
 
 public class MainActivityTest {
     @Rule
-    //public EditText roll_no, password;
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
     private MainActivity mActivity = null;
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(adminInterface.class.getName(),null,false);
@@ -41,22 +39,6 @@ public class MainActivityTest {
         onView(withId(R.id.edButLogin)).perform(click());
         Activity adminInterface = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
         assertNotNull(adminInterface);
-        /*assertNotNull(adminActivity.findViewById(R.id.edBUtSave));
-        onView(withId(R.id.edBUtSave)).perform(click());
-        assertNotNull(adminActivity.findViewById(R.id.edButSubmit));
-        onView(withId(R.id.edButSubmit)).perform(click());
-        Activity mainInterface = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
-        assertNotNull(mainInterface);
-        onView(withId(R.id.edBUtSave)).perform(click());
-        adminInterface = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
-        assertNotNull(adminInterface);
-        onView(withId(R.id.edButSubmit)).perform(click());
-        adminInterface = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
-        assertNotNull(adminInterface);
-        onView(withId(R.id.home)).perform(click());
-        adminInterface = getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
-        assertNotNull(adminInterface);
-        adminInterface.finish();*/
     }
 
     @After
