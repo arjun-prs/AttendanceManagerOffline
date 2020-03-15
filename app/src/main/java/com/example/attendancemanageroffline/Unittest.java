@@ -17,7 +17,7 @@ public class Unittest {
     public static boolean checkPassword(String pwd)
     {
         final String secretKey = "admin";
-        if(pwd.equals(AES.encrypt("DEFAULT",secretKey)))
+        if(pwd.equals("DEFAULT"))
             return true;
         else
             return false;
