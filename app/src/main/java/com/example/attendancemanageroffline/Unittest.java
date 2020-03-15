@@ -13,9 +13,9 @@ public class Unittest {
             return false;
         return pat.matcher(roll_no).matches();
     }
-    public static boolean checkPassword(String password)
+    public static boolean checkPassword(String pwd)
     {
-        if(password.equals("DEFAULT"))
+        if(pwd.equals("DEFAULT"))
             return true;
         else
             return false;
