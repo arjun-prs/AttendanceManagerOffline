@@ -36,9 +36,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
 
 dependencies {
     compile 'de.timroes.android:EnhancedListView:0.3.0@aar'
