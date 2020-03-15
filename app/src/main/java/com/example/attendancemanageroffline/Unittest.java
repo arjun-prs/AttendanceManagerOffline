@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Unittest {
 
+
     public static boolean checkUsername(String roll_no)
     {
         String UsernameRegex = "ADMIN00+[123]|CB.EN.U4CSE17+[012]+[01]+[0-9]";
@@ -15,7 +16,8 @@ public class Unittest {
     }
     public static boolean checkPassword(String pwd)
     {
-        if(pwd.equals("DEFAULT"))
+        final String secretKey = "admin";
+        if(pwd.equals(AES.encrypt("DEFAULT",secretKey)))
             return true;
         else
             return false;

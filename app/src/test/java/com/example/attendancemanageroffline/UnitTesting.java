@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 //test file
 public class UnitTesting {
+
+    final String secretKey = "admin";
     @Test
     public void checkUsername()
     {
@@ -44,35 +46,35 @@ public class UnitTesting {
     public void passwordCheck()
     {
         Unittest t = new Unittest();
-        String input1="abcd";
+        String input1=AES.encrypt("abcd", secretKey);
         boolean output;
         output = t.checkPassword(input1);
         assertEquals(false,output);
-        String input2="DEFAULT";
+        String input2=AES.encrypt("DEFAULT",secretKey);
         output = t.checkPassword(input2);
         assertEquals(true,output);
-        String input3="DEFAULT1";
+        String input3=AES.encrypt("DEFAULT1",secretKey);
         output = t.checkPassword(input3);
         assertEquals(false,output);
-        String input4="password";
+        String input4=AES.encrypt("password", secretKey);
         output = t.checkPassword(input4);
         assertEquals(false,output);
-        String input5="password123";
+        String input5=AES.encrypt("password123",secretKey);
         output = t.checkPassword(input5);
         assertEquals(false,output);
-        String input6="password890";
+        String input6=AES.encrypt("password890",secretKey);
         output = t.checkPassword(input5);
         assertEquals(false,output);
-        String input7="password@123";
+        String input7=AES.encrypt("password@123",secretKey);
         output = t.checkPassword(input7);
         assertEquals(false,output);
-        String input8="password@890";
+        String input8=AES.encrypt("password@890",secretKey);
         output = t.checkPassword(input8);
         assertEquals(false,output);
-        String input9="default";
+        String input9=AES.encrypt("default",secretKey);
         output = t.checkPassword(input9);
         assertEquals(false,output);
-        String input10="default123";
+        String input10=AES.encrypt("default123",secretKey);
         output = t.checkPassword(input10);
         assertEquals(false,output);
     }
