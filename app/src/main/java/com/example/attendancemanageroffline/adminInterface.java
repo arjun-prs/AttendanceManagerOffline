@@ -307,7 +307,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
                         sms.sendTextMessage(no, null, msg, null, null);
                     }
-                    if(present_list[i]==true&&course_selected.equals("SOFTWARE"))
+                    if((present_list[i]) && course_selected.equals("SOFTWARE"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
