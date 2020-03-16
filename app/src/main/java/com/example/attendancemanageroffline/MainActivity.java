@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE171"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");//7540086973
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");//754008697
                 db.execSQL("INSERT INTO cseB values ('"+ temp+ "', '0', '0', '0', '9550643340')");
             }
             for(i=0;i<70;i++)
