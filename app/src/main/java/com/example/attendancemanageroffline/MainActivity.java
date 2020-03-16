@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 //okyf
 import static android.content.Context.MODE_PRIVATE;
-
+//working
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText roll_no;
     EditText password;
