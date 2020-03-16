@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 //Comment2
+//comment3
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
