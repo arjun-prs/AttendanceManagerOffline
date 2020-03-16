@@ -293,7 +293,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                 {
                     c1.moveToNext();
                     String roll = c1.getString(0);
-                    Boolean b=getBoolean();
+                    //Boolean b=getBoolean();
                     if(Boolean.TRUE.equals(present_list[i])&&course_selected.equals("NETWORKS"))
                     {
                         temp_int=Integer.valueOf(att[i]);
