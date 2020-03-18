@@ -1,10 +1,11 @@
 package com.example.attendancemanageroffline;
-
+//Comment 1
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
+//Comment2
+//comment3
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -293,7 +294,8 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                 {
                     c1.moveToNext();
                     String roll = c1.getString(0);
-                    if(present_list[i]==true&&course_selected.equals("NETWORKS"))
+                    //Boolean b=getBoolean();
+                    if(Boolean.TRUE.equals(present_list[i])&&course_selected.equals("NETWORKS"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;
@@ -307,7 +309,7 @@ public class adminInterface extends AppCompatActivity implements View.OnClickLis
                         msg=c1.getString(0)+" is absent for "+course_selected+" class!!!";
                         sms.sendTextMessage(no, null, msg, null, null);
                     }
-                    if(present_list[i]==true&&course_selected.equals("SOFTWARE"))
+                    if((present_list[i]) && course_selected.equals("SOFTWARE"))
                     {
                         temp_int=Integer.valueOf(att[i]);
                         temp_int++;

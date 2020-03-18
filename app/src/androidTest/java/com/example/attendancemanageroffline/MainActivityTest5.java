@@ -1,6 +1,5 @@
 package com.example.attendancemanageroffline;
 
-
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;

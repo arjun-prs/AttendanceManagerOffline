@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 //okyf
 import static android.content.Context.MODE_PRIVATE;
-
+//working
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText roll_no;
     EditText password;
@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE170"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");//7780519914
-                db.execSQL("INSERT INTO cseA values ('"+ temp+ "', '0', '0', '0', '955064330')");
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '7780519914')");//7780519914
+                db.execSQL("INSERT INTO cseA values ('"+ temp+ "', '0', '0', '0', '7780519914')");
             }
             for(i=0;i<70;i++)
             {
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE171"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");//7540086973
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");//754008697
                 db.execSQL("INSERT INTO cseB values ('"+ temp+ "', '0', '0', '0', '9550643340')");
             }
             for(i=0;i<70;i++)
@@ -178,8 +178,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     temp="CB.EN.U4CSE172"+(Integer.toString(i+1));
                 }
                 //temp.concat(Integer.toString(i));
-                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9550643340')");
-                db.execSQL("INSERT INTO cseC values ('"+ temp+ "', '0', '0', '0', '9550643340')");//9550643340
+                db.execSQL("INSERT INTO students values ('"+temp+"','DEFAULT', '9490249442')");
+                db.execSQL("INSERT INTO cseC values ('"+ temp+ "', '0', '0', '0', '9490249442')");
             }
         }
     }
