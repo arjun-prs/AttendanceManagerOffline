@@ -3,7 +3,6 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'org.sonarqube' // added for sonar qube
 //apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.google.firebase.firebase-perf'
-apply plugin: "org.sonarqube"
 
 
 android {
@@ -28,6 +27,8 @@ android {
     }
     buildToolsVersion = '28.0.3'
 }
+
+
 
 sonarqube {
     properties {
